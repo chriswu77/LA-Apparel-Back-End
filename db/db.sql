@@ -144,3 +144,7 @@
 -- DROP INDEX idx_skus;
 -- CREATE INDEX idx_skus
 --   ON skus(style_id);
+
+-- DROP INDEX idx_related;
+-- CREATE INDEX idx_related
+--   ON related(current_product_id);
