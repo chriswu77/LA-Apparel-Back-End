@@ -2,15 +2,8 @@ const db = require('../db/index');
 
 const controller = {
   getProducts: async (req, res) => {
-    let { page, count } = req.params;
-
-    if (!page) {
-      page = 1;
-    }
-
-    if (!count) {
-      count = 5;
-    }
+    const page = req.params.page || 1;
+    const count = req.params.count || 5;
 
     try {
       const text = 'SELECT * FROM products ORDER BY id LIMIT $1 OFFSET $2';
