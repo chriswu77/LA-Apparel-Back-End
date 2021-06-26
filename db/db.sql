@@ -125,3 +125,22 @@
 -- NULL 'null'
 -- DELIMITER ','
 -- CSV HEADER;
+
+
+-- CREATE INDEXES
+
+-- DROP INDEX idx_features;
+-- CREATE INDEX idx_features
+--   ON features(product_id);
+
+-- DROP INDEX idx_styles;
+-- CREATE INDEX idx_styles
+--   ON styles(product_id);
+
+-- DROP INDEX idx_photos;
+-- CREATE INDEX idx_photos
+--   ON photos(style_id);
+
+-- DROP INDEX idx_skus;
+-- CREATE INDEX idx_skus
+--   ON skus(style_id);
