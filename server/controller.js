@@ -62,6 +62,22 @@ const controller = {
       res.status(404).send(err);
     }
   },
+
+  getRelated: async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      const text = 'SELECT array_agg(related_product_id) FROM related WHERE current_product_id=$1';
+
+      const values = [id];
+
+      const data = await db.query(text, values);
+
+      res.status(200).json(data.rows[0].array_agg);
+    } catch (err) {
+      res.status(404).send(err);
+    }
+  },
 };
 
 module.exports = controller;
