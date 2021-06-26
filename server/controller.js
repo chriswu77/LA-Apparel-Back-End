@@ -6,8 +6,9 @@ const controller = {
     const count = req.params.count || 5;
 
     try {
-      const text = 'SELECT * FROM products ORDER BY id LIMIT $1 OFFSET $2';
-      const values = [count, (page - 1) * count];
+      const text = 'SELECT * FROM products WHERE id BETWEEN $1 AND $2';
+      const values = [(page - 1) * count + 1, page * count];
+
       const data = await db.query(text, values);
 
       res.status(200).json(data.rows);
