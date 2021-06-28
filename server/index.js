@@ -1,17 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const router = require('./router');
-
-const app = express();
+const app = require('./app');
 
 const port = 4000;
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-
-app.use('/api', router);
 
 app.listen(port, (err) => {
   if (err) {
