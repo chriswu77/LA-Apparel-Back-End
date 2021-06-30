@@ -1,4 +1,13 @@
-const db = require('../db/index');
+const devDB = require('../db/index');
+const testDB = require('../tests/testDB');
+
+let db;
+
+if (process.env.NODE_ENV === 'test') {
+  db = testDB;
+} else {
+  db = devDB;
+}
 
 const controller = {
   getProducts: async (req, res) => {
