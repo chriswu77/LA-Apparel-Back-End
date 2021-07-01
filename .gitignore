@@ -3,3 +3,6 @@ node_modules
 data
 package-lock.json
 mongoSchema.json
+db_config.js
+test_config.js
+products-overview-db.pem

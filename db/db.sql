@@ -12,6 +12,11 @@
 -- DELIMITER ','
 -- CSV HEADER;
 
+-- \COPY products
+-- FROM '/home/ubuntu/product.csv'
+-- DELIMITER ','
+-- CSV HEADER;
+
 -- CREATE TABLE features (
 --   id SERIAL PRIMARY KEY,
 --   product_id INT NOT NULL,
@@ -26,6 +31,12 @@
 
 -- \COPY features
 -- FROM '/Users/chriswu/Desktop/HackReactor/Products-Overview-Chris/data/features.csv'
+-- NULL 'null'
+-- DELIMITER ','
+-- CSV HEADER;
+
+-- \COPY features
+-- FROM '/home/ubuntu/product.csv'
 -- NULL 'null'
 -- DELIMITER ','
 -- CSV HEADER;
@@ -50,6 +61,12 @@
 -- DELIMITER ','
 -- CSV HEADER;
 
+-- \COPY styles
+-- FROM '/home/ubuntu/styles.csv'
+-- NULL 'null'
+-- DELIMITER ','
+-- CSV HEADER;
+
 -- CREATE TABLE photos (
 --   id SERIAL PRIMARY KEY,
 --   style_id INT NOT NULL,
@@ -68,6 +85,12 @@
 -- DELIMITER ','
 -- CSV HEADER;
 
+-- \COPY photos
+-- FROM '/home/ubuntu/photosv2.csv'
+-- NULL 'null'
+-- DELIMITER ','
+-- CSV HEADER;
+
 -- CREATE TABLE skus (
 --   id SERIAL PRIMARY KEY,
 --   style_id INT NOT NULL,
@@ -82,6 +105,12 @@
 
 -- \COPY skus
 -- FROM '/Users/chriswu/Desktop/HackReactor/Products-Overview-Chris/data/skus.csv'
+-- NULL 'null'
+-- DELIMITER ','
+-- CSV HEADER;
+
+-- \COPY skus
+-- FROM '/home/ubuntu/skus.csv'
 -- NULL 'null'
 -- DELIMITER ','
 -- CSV HEADER;
@@ -108,6 +137,12 @@
 -- DELIMITER ','
 -- CSV HEADER;
 
+-- \COPY related
+-- FROM '/home/ubuntu/related.csv'
+-- NULL '0'
+-- DELIMITER ','
+-- CSV HEADER;
+
 -- CREATE TABLE cart (
 --   id SERIAL PRIMARY KEY,
 --   user_session INT NOT NULL,
@@ -125,3 +160,32 @@
 -- NULL 'null'
 -- DELIMITER ','
 -- CSV HEADER;
+
+-- \COPY cart
+-- FROM '/home/ubuntu/cart.csv'
+-- NULL 'null'
+-- DELIMITER ','
+-- CSV HEADER;
+
+
+-- CREATE INDEXES
+
+-- DROP INDEX idx_features;
+-- CREATE INDEX idx_features
+--   ON features(product_id);
+
+-- DROP INDEX idx_styles;
+-- CREATE INDEX idx_styles
+--   ON styles(product_id);
+
+-- DROP INDEX idx_photos;
+-- CREATE INDEX idx_photos
+--   ON photos(style_id);
+
+-- DROP INDEX idx_skus;
+-- CREATE INDEX idx_skus
+--   ON skus(style_id);
+
+-- DROP INDEX idx_related;
+-- CREATE INDEX idx_related
+--   ON related(current_product_id);
