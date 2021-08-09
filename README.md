@@ -1,7 +1,7 @@
-# Project Catwalk (Back End)
+# LA Apparel (Back End)
 
 ## Motivation
-The goal of the back end portion of Project Catwalk (a retail e-commerce web app) was to create a microservice able to handle high volumes of production traffic. 
+The goal of the back end portion of LA Apparel (a retail e-commerce web app) was to create a microservice able to handle high volumes of production traffic. 
 
 ## Highlights
 - created a RESTful API using Node.js, Express and PostgreSQL
